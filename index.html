@@ -11,58 +11,67 @@
     </div>
 
     <div class="container">
-  <div class="row">
-    <div class="col-sm">
+      <div class="row">
+        <div class="col-sm">
 
-      <!--Navbar-->
-      <nav class="navbar navbar-dark bg-dark">
-
-
-        <!-- Navbar brand -->
-        <a class="navbar-nav">
-        <table>
-          <tr>
-            <p class="h3 text-white">Name of place</p>
-          </tr>
-          <tr>
-            <p class="navbar-brand">Distance : </p>
-          </tr>
-          <tr>
-            <p class="text-success">NHS</p>
-            <p class="text-danger">PRIVATE</p>
-          </tr>
-        </table>
-        </a>
+          <!--Navbar-->
+          <nav id="navbar" class="navbar navbar-light">
 
 
-        <!-- Collapse button -->
-        <button class="btn btn-info btn-lg" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
-          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i class="far fa-arrow-alt-circle-down"></i>
-          </span></button>
+            <!-- Navbar brand -->
+            <a class="navbar-nav">
+              <table>
+                <tr>
+                  <p class="h3 text-white">Name of place</p>
+                </tr>
+                <tr>
+                  <p class="navbar-brand">Distance : </p>
+                </tr>
+                <tr>
+                  <p class="text-success">NHS</p>
+                  <p class="text-danger">PRIVATE</p>
+                </tr>
+              </table>
+          </a>
 
-        <!-- Add button -->
-        <button class="btn btn-outline-success" type="button" data-target="#navbarSupportedContent1"
-           aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
+
+          <!-- Collapse button -->
+          <button class="btn btn-info btn-lg" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+            aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="dark-blue-text"><i id="collapseButtonIcon" class="far fa-arrow-alt-circle-down"></i>
+            </span>
+          </button>
+
+            <!-- Add button -->
+            <button id="addButton" class="btn btn-outline-success" type="button" data-target="#navbarSupportedContent1"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
               class="fas fa-plus fa-1x"></i></span></button>
 
+              <!-- Collapsible content -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                <div class="bg-info">
+
+                  <!-- Links -->
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Address</th>
+                        <th scope="col">Contact Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row">Post Code : </td>
+                        <td scope="row">07782172987</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- Links -->
+                </div>
+              </div>
         <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
-          <!-- Links -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <p class="text-center">Address<span class="sr-only">(current)</span></p>
-            </li>
-            <li class="nav-item active">
-              <p class="text-center">Phone</p>
-            </li>
-          </ul>
-          <!-- Links -->
-
-        </div>
-        <!-- Collapsible content -->
-
-      </nav>
+        </nav>
       <!--/.Navbar-->
 
     </div>
@@ -79,5 +88,21 @@
     <script src="./js/jQuery.js"></script>
      <script src="./js/bootstrap.js"></script>
      <script src="./js/dropDown.js"></script>
+     <script>
+      $('#addButton').click(function(){
+        document.getElementById("addButton").style.visibility = "hidden";
+        document.getElementById('navbar').className = "navbar navbar-primary"
+
+      });
+
+      $('#collapseButtonIcon').click(function(){
+        if (document.getElementById("collapseButtonIcon").className == "far fa-arrow-alt-circle-down"){
+          document.getElementById("collapseButtonIcon").className = "far fa-arrow-alt-circle-left";
+        } else {
+          document.getElementById("collapseButtonIcon").className = "far fa-arrow-alt-circle-down";
+        }
+
+      });
+     </script>
   </body>
 </html>
